@@ -38,7 +38,7 @@ public class LancamentoService {
         return lancamentoRepository.findAll();
     }
     
-    public void inativarHistorico(Integer lancamentoId) {
+    public void inativarLancamento(Integer lancamentoId) {
         LancamentoEntity lancamento = getLancamentoId(lancamentoId);
         lancamento.setStatus(false);        
         lancamentoRepository.save(lancamento);
