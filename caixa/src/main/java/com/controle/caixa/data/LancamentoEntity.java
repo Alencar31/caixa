@@ -21,7 +21,7 @@ public class LancamentoEntity {
     @NotNull)message="Data é obrigatória!")
     private Date dataLcto;
     @NotNull)message="Valor é obrigatório!")
-    private Double valor;
+    private double valor;
     @Size(max=1, message="Informe D para Débito e C para Crédito!")
     private String debcre;
     @NotNull(message="Histórico é obrigatório!")
