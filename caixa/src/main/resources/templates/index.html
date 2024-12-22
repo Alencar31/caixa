@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sistema de Controle de Caixa</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" >
+    </head>
+    <body>
+        <div class="container my-2">
+            <h1>Saldos</h1>
+            <a th:href="@{/listarTodasContas}" class="btn btn-primary btn-sm mb-3">Manutenção de Contas</a>
+            <a th:href="@{/listarTodosHistoricos}" class="btn btn-primary btn-sm mb-3">Manutenção de Historicos</a>
+            <a th:href="@{/listarTodosLancamentos}" class="btn btn-primary btn-sm mb-3">Manutenção de Lançamentos</a>
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Conta</th>
+                        <th>Ano</th>
+                        <th>Mes</th>
+                        <th>Saldo Inicial</th>
+                        <th>Crédito</th>
+                        <th>Débito</th>
+                        <th>Saldo Final</th>
+                        <th>Status</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="sald : ${listarTodosSaldos}">
+                        <td th:text="${sald.id}"></td>
+                        <td th:text="${sald.contaId}"></td>
+                        <td th:text="${sald.ano}"></td>
+                        <td th:text="${sald.mes}"></td>
+                        <td th:text="${sald.saldoInicial}"></td>
+                        <td th:text="${sald.credito}"></td>
+                        <td th:text="${sald.debito}"></td>
+                        <td th:text="${sald.saldoFinal}"></td>    
+                        <td th:text="${sald.status}"></td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
+</html>

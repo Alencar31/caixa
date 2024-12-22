@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public interface SaldController {
+public class SaldController {
     
     @Autowired
     SaldoService saldoService;

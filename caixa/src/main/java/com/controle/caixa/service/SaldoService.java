@@ -28,7 +28,7 @@ public class SaldoService {
         saldo.setCredito(saldoRequest.getCredito()); 
         saldo.setDebito(saldoRequest.getDebito());
         saldo.setSaldoAtual(saldoRequest.getSaldoAtual());        
-        saldo.save(saldo);
+        saldoRepository.save(saldo);
         return saldo;
     }
     

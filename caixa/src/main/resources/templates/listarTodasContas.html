@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manutenção de Contas</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" >
+    </head>
+    <body>
+        <div class="container my-2">
+            <h1>Lista de Contas</h1>
+            <a th:href="@{/criarContaForm}" class="btn btn-primary btn-sm mb-3">Incluir Conta</a>
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Natureza</th>
+                        <th>Principal</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cont : ${listarTodasContas}">
+                        <td th:text="${cont.id}"></td>
+                        <td th:text="${cont.descricao}"></td>
+                        <td th:text="${cont.natureza}"></td>
+                        <td th:text="${cont.principal}"></td>
+                        <td th:text="${cont.status}"></td>
+                        <td> <a th:href="@{/atualizarContaForm/{id}(id=${cont.id})}" class="btn btn-primary">Atualizar</a>
+                             <a th:href="@{/inativarConta/{id}(id=${cont.id})}" class="btn btn-danger">Inativar</a>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
+</html>

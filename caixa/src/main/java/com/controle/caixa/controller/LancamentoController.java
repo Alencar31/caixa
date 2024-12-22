@@ -1,5 +1,19 @@
 package com.controle.caixa.controller;
 
+import com.controle.caixa.data.LancamentoEntity;
+import com.controle.caixa.service.LancamentoService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 @RequestMapping("/lancamento")
 public class LancamentoController {
@@ -28,7 +42,7 @@ public class LancamentoController {
     @PutMapping("/atualizarLancamento/{id}")
     public ResponseEntity<LancamentoEntity> atualizarLancamento(@PathVariable Integer id, @RequestBody LancamentoEntity lancamento) {
         var lancamentoAtualizado = lancamentoService.atualizarLancamento(id, lancamento);
-        return new LancamentoEntity<>(lancamentoAtualizado, HttpStatus.OK);
+        return new ResponseEntity<>(lancamentoAtualizado, HttpStatus.OK);
     }
     
     @PutMapping("/inativarLancamento/{id}")

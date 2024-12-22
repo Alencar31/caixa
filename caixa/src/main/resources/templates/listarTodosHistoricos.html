@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manutenção de Históricos</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" >
+    </head>
+    <body>
+        <div class="container my-2">
+            <h1>Lista de Historicos</h1>
+            <a th:href="@{/criarHistoricoForm}" class="btn btn-primary btn-sm mb-3">Incluir Historico</a>
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Complemento</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="hist : ${listarTodosHistoricos}">
+                        <td th:text="${hist.id}"></td>
+                        <td th:text="${hist.descricao}"></td>
+                        <td th:text="${hist.complemento}"></td>
+                        <td th:text="${hist.status}"></td>
+                        <td> <a th:href="@{/atualizarHistoricoForm/{id}(id=${hist.id})}" class="btn btn-primary">Atualizar</a>
+                             <a th:href="@{/inativarHistorico/{id}(id=${hist.id})}" class="btn btn-danger">Inativar</a>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
+</html>

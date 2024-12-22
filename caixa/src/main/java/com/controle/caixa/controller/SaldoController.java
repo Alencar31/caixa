@@ -42,7 +42,7 @@ public class SaldoController {
     @PutMapping("/atualizarSaldo/{id}")
     public ResponseEntity<SaldoEntity> atualizarSaldo(@PathVariable Integer id, @RequestBody SaldoEntity saldo) {
         var saldoAtualizado = saldoService.atualizarSaldo(id, saldo);
-        return new SaldoEntity<>(saldoAtualizado, HttpStatus.OK);
+        return new ResponseEntity<>(saldoAtualizado, HttpStatus.OK);
     }
     
     @PutMapping("/inativarSaldo/{id}")

@@ -23,7 +23,7 @@ public class LancamentoService {
         LancamentoEntity lancamento = getLancamentoId(lancamentoId);
         lancamento.setContaId(lancamentoRequest.getContaId());
         lancamento.setValor(lancamentoRequest.getValor());
-        lancamento.setDebCre(lancamentoRequest.getDebCre());
+        lancamento.setDebcre(lancamentoRequest.getDebcre());
         lancamento.setHistoricoId(lancamentoRequest.getHistoricoId());
         lancamento.setComplemento(lancamentoRequest.getComplemento());     
         lancamentoRepository.save(lancamento);
