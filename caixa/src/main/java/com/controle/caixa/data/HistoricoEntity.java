@@ -18,6 +18,6 @@ public class HistoricoEntity {
     @Size(min=5, message="Informe ao menos 5 caracteres para o campo descrição!")
     private String descricao;
     @Size(max=1, message="Informe S para Sim e N para Não!")
-    private String complemento
+    private String complemento;
     private boolean status;
 }
