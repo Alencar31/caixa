@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sistema de Controle de Caixa</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Inclusão de Lançamento</h1>
+            <hr>
+            <form action="#" th:action="@{/salvarLancamento}" th:object="${lancamento}" method="POST">
+                <input type="text" th:field="*{contaId}" placeholder="Informe a conta" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('contaId')}" th:errors="*{contaId}"></span>
+                <input type="text" th:field="*{valor}" placeholder="Informe o valor" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></span>                   
+                <input type="text" th:field="*{debcre}" placeholder="Informe a natureza do lançamento C-Crédito ou D-Débito" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('debcre')}" th:errors="*{debcre}"></span>
+                <input type="text" th:field="*{historicoId}" placeholder="Informe o histórico" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('historicoId')}" th:errors="*{historicoId}"></span> 
+                <input type="text" th:field="*{complemento}" placeholder="Informe o complemento do histórico" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"></span>                 
+                <button type="submit" class="btn btn-info mt-4">Salvar</button>
+            </form>
+            <hr>
+            <a th:href="@{/listarTodosLancamentos}">Retornar para a Listagem</a>
+        </div>
+        <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
+</html>
