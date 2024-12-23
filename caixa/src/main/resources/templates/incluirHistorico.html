@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sistema de Controle de Caixa</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Inclusão de Histórico</h1>
+            <hr>
+            <form action="#" th:action="@{/salvarHistorico}" th:object="${historico}" method="POST">
+                <input type="text" th:field="*{descricao}" placeholder="Informe a descrição da conta" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span>
+                <input type="text" th:field="*{complemento}" placeholder="Informe se o histórico terá complemento S-Sim ou N-Não" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"></span>   
+                <button type="submit" class="btn btn-info mt-4">Salvar</button>
+            </form>
+            <hr>
+            <a th:href="@{/listarTodosHistoricos}">Retornar para a Listagem</a>
+        </div>
+        <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
+</html>
