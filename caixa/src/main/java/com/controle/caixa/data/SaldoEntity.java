@@ -18,17 +18,7 @@ public class SaldoEntity {
     private Integer id;
     @NotNull(message="Conta é obrigatória!")
     private Integer contaId;
-    @NotNull(message="Ano é obrigatório!")
-    private Integer ano;
-    @NotNull(message="Mês é obrigatório!")
-    private Integer mes;   
-    @NotNull(message="Saldo Anterior é obrigatório!")
-    private double saldoAnterior;
-    @NotNull(message="Valor à Crédito é obrigatório!")
-    private double credito;
-    @NotNull(message="Valor à Débito é obrigatório!")
-    private double debito;
-    @NotNull(message="Saldo Final é obrigatório!")
+    @NotNull(message="Saldo Atual é obrigatório!")
     private double saldoAtual; 
     private boolean status;
 }

@@ -16,12 +16,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Conta</th>
-                        <th>Ano</th>
-                        <th>Mes</th>
-                        <th>Saldo Inicial</th>
-                        <th>Crédito</th>
-                        <th>Débito</th>
-                        <th>Saldo Final</th>
+                        <th>Saldo Atual</th>
                         <th>Status</th>                        
                     </tr>
                 </thead>
@@ -29,12 +24,7 @@
                     <tr th:each="sald : ${listarTodosSaldos}">
                         <td th:text="${sald.id}"></td>
                         <td th:text="${sald.contaId}"></td>
-                        <td th:text="${sald.ano}"></td>
-                        <td th:text="${sald.mes}"></td>
-                        <td th:text="${sald.saldoInicial}"></td>
-                        <td th:text="${sald.credito}"></td>
-                        <td th:text="${sald.debito}"></td>
-                        <td th:text="${sald.saldoFinal}"></td>    
+                        <td th:text="${sald.saldoAtual}"></td>    
                         <td th:text="${sald.status}"></td> 
                     </tr>
                 </tbody>

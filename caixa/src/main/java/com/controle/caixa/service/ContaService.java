@@ -15,6 +15,7 @@ public class ContaService {
     
     public ContaEntity criarConta(ContaEntity conta) {
         conta.setId(null);
+        conta.setStatus(true);
         contaRepository.save(conta);
         return conta;
     }
@@ -22,7 +23,6 @@ public class ContaService {
     public ContaEntity atualizarConta(Integer contaId, ContaEntity contaRequest) {
         ContaEntity conta = getContaId(contaId);
         conta.setDescricao(contaRequest.getDescricao());
-        conta.setNatureza(contaRequest.getNatureza());
         conta.setPrincipal(contaRequest.getPrincipal());
         contaRepository.save(conta);
         return conta;

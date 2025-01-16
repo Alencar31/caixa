@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ContaController {
 
     @Autowired
-    ContaService contaService;    
+    ContaService contaService;
 
     @GetMapping("/listarTodasContas")
     public ResponseEntity<List> getAllContas() {
@@ -34,7 +34,7 @@ public class ContaController {
     }
     
     @PostMapping("/adicionarConta")
-    public ResponseEntity<ContaEntity> addAnalise(@RequestBody ContaEntity conta) {
+    public ResponseEntity<ContaEntity> addConta(@RequestBody ContaEntity conta) {
         var novaConta = contaService.criarConta(conta);
         return new ResponseEntity<>(novaConta, HttpStatus.CREATED);
     }

@@ -12,12 +12,12 @@
             <form action="#" th:action="@{/salvarLancamento}" th:object="${lancamento}" method="POST">
                 <input type="text" th:field="*{contaId}" placeholder="Informe a conta" class="form-control mt-4 col-4" />
                 <span class="text-danger" th:if="${#fields.hasErrors('contaId')}" th:errors="*{contaId}"></span>
+                <input type="date" th:field="*{dataLcto}" placeholder="Informe a data do documento" class="form-control mt-4 col-4" />
+                <span class="text-danger" th:if="${#fields.hasErrors('dataLcto')}" th:errors="*{dataLcto}"></span>
                 <input type="text" th:field="*{valor}" placeholder="Informe o valor" class="form-control mt-4 col-4" />
                 <span class="text-danger" th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></span>                   
-                <input type="text" th:field="*{debcre}" placeholder="Informe a natureza do lançamento C-Crédito ou D-Débito" class="form-control mt-4 col-4" />
-                <span class="text-danger" th:if="${#fields.hasErrors('debcre')}" th:errors="*{debcre}"></span>
                 <input type="text" th:field="*{historicoId}" placeholder="Informe o histórico" class="form-control mt-4 col-4" />
-                <span class="text-danger" th:if="${#fields.hasErrors('historicoId')}" th:errors="*{historicoId}"></span> 
+                <span class="text-danger" th:if="${#fields.hasErrors('historicoId')}" th:errors="*{historico0Id}"></span> 
                 <input type="text" th:field="*{complemento}" placeholder="Informe o complemento do histórico" class="form-control mt-4 col-4" />
                 <span class="text-danger" th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"></span>                 
                 <button type="submit" class="btn btn-info mt-4">Salvar</button>

@@ -24,19 +24,6 @@ public class SaldController {
         return "listarTodosSaldos";
     }
     
-    @GetMapping("/inativarSaldo/{id}")
-    public String inativarSaldo(@PathVariable(value = "id") Integer id) {
-        saldoService.inativarSaldo(id);
-        return "redirect:/";
-    }
-    
-    @GetMapping("/criarSaldoForm")
-    public String criarSaldoForm(Model model) {
-        SaldoEntity saldo = new SaldoEntity();
-        model.addAttribute("saldo", saldo);
-        return "incluirSaldo";
-    }
-    
     @PostMapping("/salvarSaldo")
     public String salvarSaldo(@Valid @ModelAttribute("lancamento") SaldoEntity saldo, BindingResult result) {
         if (result.hasErrors()) {
@@ -48,12 +35,5 @@ public class SaldController {
             saldoService.atualizarSaldo(saldo.getId(), saldo);
         }
         return "redirect:/";
-    }
-    
-    @GetMapping("/atualizarSaldoForm/{id}")
-    public String atualizarSaldoForm(@PathVariable(value = "id") Integer id, Model model) {
-        SaldoEntity saldo = saldoService.getSaldoId(id);
-        model.addAttribute("saldo", saldo);
-        return "atualizarSaldo";
     }
 }

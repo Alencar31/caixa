@@ -27,12 +27,6 @@ public class SaldoController {
         return new ResponseEntity<>(saldos, HttpStatus.OK);
     }
     
-    @GetMapping("/pesquisarSaldo/{id}")
-    public ResponseEntity<SaldoEntity> getSaldoById(@PathVariable Integer id) {
-        SaldoEntity saldo = saldoService.getSaldoId(id);
-        return new ResponseEntity<>(saldo, HttpStatus.OK);
-    }
-    
     @PostMapping("/adicionarSaldo")
     public ResponseEntity<SaldoEntity> addSaldo(@RequestBody SaldoEntity saldo) {
         var novoSaldo = saldoService.criarSaldo(saldo);
@@ -44,10 +38,4 @@ public class SaldoController {
         var saldoAtualizado = saldoService.atualizarSaldo(id, saldo);
         return new ResponseEntity<>(saldoAtualizado, HttpStatus.OK);
     }
-    
-    @PutMapping("/inativarSaldo/{id}")
-    public ResponseEntity inativarSaldo(@PathVariable Integer id) {
-        saldoService.inativarSaldo(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    } 
 }

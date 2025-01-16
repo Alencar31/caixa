@@ -15,6 +15,7 @@ public class HistoricoService {
     
     public HistoricoEntity criarHistorico(HistoricoEntity historico) {
         historico.setId(null);
+        historico.setStatus(true);
         historicoRepository.save(historico);
         return historico;
     }

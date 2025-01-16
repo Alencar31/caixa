@@ -22,11 +22,6 @@ public class SaldoService {
     public SaldoEntity atualizarSaldo(Integer saldoId, SaldoEntity saldoRequest) {
         SaldoEntity saldo = getSaldoId(saldoId);
         saldo.setContaId(saldoRequest.getContaId());
-        saldo.setAno(saldoRequest.getAno());
-        saldo.setMes(saldoRequest.getMes());
-        saldo.setSaldoAnterior(saldoRequest.getSaldoAnterior());
-        saldo.setCredito(saldoRequest.getCredito()); 
-        saldo.setDebito(saldoRequest.getDebito());
         saldo.setSaldoAtual(saldoRequest.getSaldoAtual());        
         saldoRepository.save(saldo);
         return saldo;

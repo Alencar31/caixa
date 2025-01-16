@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:"http://www.thymeleaf.org">
     <head>
         <title>Manutenção de Lançamentos</title>
         <meta charset="UTF-8">
@@ -9,13 +9,14 @@
         <div class="container my-2">
             <h1>Lista de Lançamentos</h1>
             <a th:href="@{/criarLancamentoForm}" class="btn btn-primary btn-sm mb-3">Incluir Lançamento</a>
+            <a th:href="@{/}">Retornar</a>
             <table border="1" class="table table-striped table-responsive-md">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Conta</th>
+                        <th>Data Lcto</th>
                         <th>Valor</th>
-                        <th>Natureza</th>
                         <th>Histórico</th>
                         <th>Complemento</th>
                         <th>Status</th>                        
@@ -25,8 +26,8 @@
                     <tr th:each="lanc : ${listarTodosLancamentos}">
                         <td th:text="${lanc.id}"></td>
                         <td th:text="${lanc.contaId}"></td>
+                        <td th:text="${#dates.format(lanc.dataLcto,'dd/MM/yyyy')}"></td>
                         <td th:text="${lanc.valor}"></td>
-                        <td th:text="${lanc.natureza}"></td>
                         <td th:text="${lanc.historicoId}"></td>     
                         <td th:text="${lanc.complemento}"></td> 
                         <td th:text="${lanc.status}"></td>

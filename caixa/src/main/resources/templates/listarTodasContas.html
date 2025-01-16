@@ -15,7 +15,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Descrição</th>
-                        <th>Natureza</th>
                         <th>Principal</th>
                         <th>Status</th>
                     </tr>
@@ -24,7 +23,6 @@
                     <tr th:each="cont : ${listarTodasContas}">
                         <td th:text="${cont.id}"></td>
                         <td th:text="${cont.descricao}"></td>
-                        <td th:text="${cont.natureza}"></td>
                         <td th:text="${cont.principal}"></td>
                         <td th:text="${cont.status}"></td>
                         <td> <a th:href="@{/atualizarContaForm/{id}(id=${cont.id})}" class="btn btn-primary">Atualizar</a>

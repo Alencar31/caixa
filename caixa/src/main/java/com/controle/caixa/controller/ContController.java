@@ -17,7 +17,7 @@ public class ContController {
     
     @Autowired
     ContaService contaService;
-    
+      
     @GetMapping("/listarTodasContas")
     public String ListarContas(Model model) {
         model.addAttribute("listarTodasContas", contaService.listarTodasContas());

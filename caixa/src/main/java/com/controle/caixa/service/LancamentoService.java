@@ -15,6 +15,7 @@ public class LancamentoService {
     
     public LancamentoEntity criarLancamento(LancamentoEntity lancamento) {
         lancamento.setId(null);
+        lancamento.setStatus(true);
         lancamentoRepository.save(lancamento);
         return lancamento;
     }
@@ -22,8 +23,8 @@ public class LancamentoService {
     public LancamentoEntity atualizarLancamento(Integer lancamentoId, LancamentoEntity lancamentoRequest) {
         LancamentoEntity lancamento = getLancamentoId(lancamentoId);
         lancamento.setContaId(lancamentoRequest.getContaId());
+        lancamento.setDataLcto(lancamentoRequest.getDataLcto());
         lancamento.setValor(lancamentoRequest.getValor());
-        lancamento.setDebcre(lancamentoRequest.getDebcre());
         lancamento.setHistoricoId(lancamentoRequest.getHistoricoId());
         lancamento.setComplemento(lancamentoRequest.getComplemento());     
         lancamentoRepository.save(lancamento);

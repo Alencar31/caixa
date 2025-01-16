@@ -12,8 +12,6 @@
             <form action="#" th:action="@{/salvarConta}" th:object="${conta}" method="POST">
                 <input type="text" th:field="*{descricao}" placeholder="Informe a descrição da conta" class="form-control mt-4 col-4" />
                 <span class="text-danger" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span>
-                <input type="text" th:field="*{natureza}" placeholder="Informe a natureza da Conta C-Crédito ou D-Débito" class="form-control mt-4 col-4" />
-                <span class="text-danger" th:if="${#fields.hasErrors('natureza')}" th:errors="*{natureza}"></span>   
                 <input type="text" th:field="*{principal}" placeholder="Informe se a conta é a principal S-Sim ou N-Não" class="form-control mt-4 col-4" />
                 <span class="text-danger" th:if="${#fields.hasErrors('principal')}" th:errors="*{principal}"></span>
                 <button type="submit" class="btn btn-info mt-4">Salvar</button>
