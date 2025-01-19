@@ -17,6 +17,7 @@ public class LancamentoService {
         lancamento.setId(null);
         lancamento.setStatus(true);
         lancamentoRepository.save(lancamento);
+//        call atualizar_saldo(lancamento.getContaId(), lancamento.getValor(), lancamento.getStatus());
         return lancamento;
     }
     
@@ -28,6 +29,7 @@ public class LancamentoService {
         lancamento.setHistoricoId(lancamentoRequest.getHistoricoId());
         lancamento.setComplemento(lancamentoRequest.getComplemento());     
         lancamentoRepository.save(lancamento);
+//        call atualizar_saldo(lancamentoRequest.getContaId(), lancamentoRequest.getValor(), lancamentoRequest.getStatus());
         return lancamento;
     }
     
